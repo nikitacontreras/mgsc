@@ -32,7 +32,7 @@ Su funcionamiento se entiende en:
 	- `READY`: Invoca `whenServersAreReady()` que a su vez llama a `disposeLoading()`, que remueve la pantalla de carga
 	- `CHOSE`: salta a chooseServer(), remueve la pantalla de servidores, carga en la variable `_loc2_` el objeto de `connection` dentro de `settings.json`, le agrega `address`, `port` y `servername`, define la variable `this.serverName` e inicia la conexión
 12. **initiateConnection()**
-	Cambia el estado a `CONNECTING`, define un objeto `connectionSettings` del archivo `servers.json`, a su vez almacena la dirección en `serverAddress` y crea un nuevo objeto con la clase `DefaultNetworkManager()`  (Véase [[DefaultNetworkManager.as]][DefaultNetworkManager.as])
+	Cambia el estado a `CONNECTING`, define un objeto `connectionSettings` del archivo `servers.json`, a su vez almacena la dirección en `serverAddress` y crea un nuevo objeto con la clase `DefaultNetworkManager()`  (Véase [DefaultNetworkManager.as])
 
 ### Gaturro
 Se encarga en gran parte del manejo de los sprites y salas dentro del cliente, tiene algunas utilidades para el manejo de strings/arrays, contando reporte de errores
