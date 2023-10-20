@@ -1,8 +1,3 @@
-
-[TOCM]
-
-[TOC]
-
 # Libraries
 In the `MMO.swf` file (the bootstrap of the game) there are several functions which will be added as functionality is found.
 The following libraries can be found by decompiling the `MMO.swf` file, returning a `.fla` file with `.as` (ActionScript 3) code.
@@ -48,8 +43,8 @@ Envía los errores capturados, el string lo saca de `locales.json`
 #### com.qb9.gaturro.util.errors.PhpErrorLog
 Hace reportes de errores al endpoint `https://mundogaturro.com/logger.php`
 # Observaciones
-- La lista de servidores cuando se retorna, devuelve un valor inferior al real, si el puerto en servers.json es 4098, en el bootstrap se le agrega 1, lo que hace que 4099 sea el valor real **(véase [[MMO.as]][MMO.as])**
-- Token Basic: gaturro:gatoprepro **(véase [[PhpErrorLog.as]][PhpErrorLog.as])**
+- La lista de servidores cuando se retorna, devuelve un valor inferior al real, si el puerto en servers.json es 4098, en el bootstrap se le agrega 1, lo que hace que 4099 sea el valor real **(véase [MMO.as])**
+- Token Basic: gaturro:gatoprepro **(véase [PhpErrorLog.as])**
 - com.qb9.mines.network.MinesServer | bootstrap conexión
 - com.qb9.gaturro : serviceAccessKey:"0PN5J17HBGZHT7JJ3X82" || securityRequestKey:"ABDpIUDlKDABDpIU"
 - com.qb9.gaturro.net.requests.SecureMamboRequest // Aparentemente envia las peticiones de manera "segura" con un hash
