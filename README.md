@@ -30,7 +30,7 @@ Su funcionamiento se entiende en:
 	Cambia el estado a `DIRECTORY`, genera una nueva lista de servidores `ServersScreen()` y añade 3 listeners
 	- `ERROR`: Omite la selección de servidores `skipServerElection()` e intenta enviarlo a un servidor default
 	- `READY`: Invoca `whenServersAreReady()` que a su vez llama a `disposeLoading()`, que remueve la pantalla de carga
-	- `CHOSE`: salta a chooseServer(), remueve la pantalla de servidores, carga en la variable `_loc2_` el objeto de `connection` dentro de `settings.json`, le agrega `address`, `port` y `servername`, define la variable `this.serverName` e inicia la conexión
+	- `CHOSE`: salta a chooseServer(), remueve la pantalla de servidores, carga en la variable `_loc2_` el objeto de `connection` dentro de `settings.json`, le agrega `address`, `port` y `servername` al objeto `connection`, define la variable `this.serverName` e inicia la conexión
 12. **initiateConnection()**
 	Cambia el estado a `CONNECTING`, define un objeto `connectionSettings` del archivo `servers.json`, a su vez almacena la dirección en `serverAddress` y crea un nuevo objeto con la clase `DefaultNetworkManager()`  (Véase [DefaultNetworkManager.as])
 
