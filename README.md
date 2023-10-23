@@ -42,6 +42,48 @@ Recibe los servidores disponibles desde el archivo `server.json`
 Envía los errores capturados, el string lo saca de `locales.json`
 #### com.qb9.gaturro.util.errors.PhpErrorLog
 Hace reportes de errores al endpoint `https://mundogaturro.com/logger.php`
+# Assets
+Los assets contienen subclases, las cuáles se encargan del comportamiento de los objetos dentro del juego, desde las prendas, hasta objetos del hogar.
+## ClothMamboAsset
+En el `frame1()` deben ir una variable `clothes` la cuál debe ir asignada con las siguientes opciones:
+
+```json
+{
+    "accesories": "filename.itemid",
+    "hats": "filename.itemid",
+    "foot": "filename.itemid",
+    "arm": "filename.itemid",
+    "cloth": "filename.itemid",
+    "neck": "filename.itemid",
+    "leg": "filename.itemid",
+    "hairs": "filename.itemid",
+    "transport": "filename.transportid" /*must be TransportOnMamboAsset*/
+}
+```
+## ConsumableMamboAsset
+Se pueden especificar acciones bajo la variable/objeto `adds`
+
+```actionscript
+	adds.effect (string)
+	adds.action (string)
+	questItem (bool)
+```
+* Effect:
+```actionscript
+ "type.hexColor"
+```
+	Valores de `type`:
+	-	glow
+	
+* Action:
+```actionscript
+ "animation.swfFile.id"
+```
+	Valores de `animation`:
+	-	percussion
+	-	guitar
+	-	flag
+
 # Observaciones
 - La lista de servidores cuando se retorna, devuelve un valor inferior al real, si el puerto en servers.json es 4098, en el bootstrap se le agrega 1, lo que hace que 4099 sea el valor real **(véase [MMO.as])**
 - Token Basic: gaturro:gatoprepro **(véase [PhpErrorLog.as])**
