@@ -2,7 +2,7 @@
 En este documento se va a hacer un recorrido lógico de los métodos y funciones a profundidad, desde cómo se inicia la conexión, como se trata, qué se envía y recibe y por último, cómo finaliza.
 
 ## MMO()
-La conexión empieza desde el archivo MMO, creando un DefaultNetworkManager
+La conexión empieza desde el archivo MMO, creando un `DefaultNetworkManager()`
 
 ## com.qb9.mambo.net.manager.DefaultNetworkManager()
 Dentro del DefaultNetworkManager, se crea un objeto `MinesServer` llamado `mines`, el cuál se encarga de la conexión mediante socket al servidor; Se agrega un listener con `MinesEvent.MESSAGE = "MinesMessage"` y se envía a la función `this.handleMamboEvent()`
@@ -23,7 +23,7 @@ Dentro del init() se inician los eventos con `initEvents()`, creando el socket y
   
   - Se verifica que no haya un mensaje definido pendiente o bytes recibidos existentes (`this.message`)
   - Se leen los bytes y se almacenan en la variable temporal `_loc2_`
-  - Si la variable temporal no es igual al `HEADER_TYPE` definido en la clase `com.qb9.mines.network.Message` (Siendo este 3), retorna nada, si no, define `this.message` como un nuevo objeto `Message`
+  - Si la variable temporal no es igual al `HEADER_TYPE` (Véase [Message.as]) definido en la clase `com.qb9.mines.network.Message` (Siendo este 3), retorna nada, si no, define `this.message` como un nuevo objeto `Message`
   - Se verifica que `this.message` necesite un payload, si los bytes disponibles del socket son inferiores a 4, se agarra el valor del socket como int `this.socket.readInt()` y se define como `payload` del `this.message`
   - Se envía el socket a un lector `this.message.read(this.socket)`
   - Se comprueba que el mensaje esté completo `this.message.isComplete()`, en caso de que lo esté, se procesa `this.processMessage(this.message)`
@@ -40,3 +40,6 @@ Dentro del `handleMamboEvent(param1:MinesEvent)` se obtiene el `mObject` del `pa
 
 Estos se envían al método (`handleEvent(type, mobject, mobject.hasBoolean("success"), mobject.getString("errorCode" or "errorMessage"))`), generando un `NetworkManagerEvent()` y despachándolo
 
+### MMO()
+
+[Message.as]: https://github.com/nikitacontreras/mgsc/blob/main/com/qb9/mines/network/Message.as#L11 "Message.as:L11"
