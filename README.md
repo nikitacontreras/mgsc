@@ -93,6 +93,6 @@ Se pueden especificar acciones bajo la variable/objeto `adds`
 - com.qb9.gaturro.net.requests.SecureMamboRequest // Aparentemente envia las peticiones de manera "segura" con un hash
 - private const securityKey:String = "YEDpIUWlKSIBBwIK"; 
 
-[MMO.as]: https://github.com/nikitacontreras/mgsc/blob/main/MMO.as#L507 "MMO.as"
-[PhpErrorLog.as]: https://github.com/nikitacontreras/mgsc/blob/main/com/qb9/gaturro/util/errors/PhpErrorLog.as#L85 "PhpErrorLog.as"
-[DefaultNetworkManager.as]: https://github.com/nikitacontreras/mgsc/blob/main/com/qb9/mambo/net/manager/DefaultNetworkManager.as "DefaultNetworkManager.as"
+[MMO.as]: MMO.as#L507 "MMO.as"
+[PhpErrorLog.as]: com/qb9/gaturro/util/errors/PhpErrorLog.as#L85 "PhpErrorLog.as"
+[DefaultNetworkManager.as]: com/qb9/mambo/net/manager/DefaultNetworkManager.as "DefaultNetworkManager.as"
