@@ -1,8 +1,3 @@
-
-[TOCM]
-
-[TOC]
-
 # Libraries
 In the `MMO.swf` file (the bootstrap of the game) there are several functions which will be added as functionality is found.
 The following libraries can be found by decompiling the `MMO.swf` file, returning a `.fla` file with `.as` (ActionScript 3) code.
@@ -35,9 +30,9 @@ Su funcionamiento se entiende en:
 	Cambia el estado a `DIRECTORY`, genera una nueva lista de servidores `ServersScreen()` y añade 3 listeners
 	- `ERROR`: Omite la selección de servidores `skipServerElection()` e intenta enviarlo a un servidor default
 	- `READY`: Invoca `whenServersAreReady()` que a su vez llama a `disposeLoading()`, que remueve la pantalla de carga
-	- `CHOSE`: salta a chooseServer(), remueve la pantalla de servidores, carga en la variable `_loc2_` el objeto de `connection` dentro de `settings.json`, le agrega `address`, `port` y `servername`, define la variable `this.serverName` e inicia la conexión
+	- `CHOSE`: salta a chooseServer(), remueve la pantalla de servidores, carga en la variable `_loc2_` el objeto de `connection` dentro de `settings.json`, le agrega `address`, `port` y `servername` al objeto `connection`, define la variable `this.serverName` e inicia la conexión
 12. **initiateConnection()**
-	Cambia el estado a `CONNECTING`, define un objeto `connectionSettings` del archivo `servers.json`, a su vez almacena la dirección en `serverAddress` y crea un nuevo objeto con la clase `DefaultNetworkManager()`  (Véase [[DefaultNetworkManager.as]][DefaultNetworkManager.as])
+	Cambia el estado a `CONNECTING`, define un objeto `connectionSettings` del archivo `servers.json`, a su vez almacena la dirección en `serverAddress` y crea un nuevo objeto con la clase `DefaultNetworkManager()`  (Véase [DefaultNetworkManager.as])
 
 ### Gaturro
 Se encarga en gran parte del manejo de los sprites y salas dentro del cliente, tiene algunas utilidades para el manejo de strings/arrays, contando reporte de errores
@@ -47,9 +42,51 @@ Recibe los servidores disponibles desde el archivo `server.json`
 Envía los errores capturados, el string lo saca de `locales.json`
 #### com.qb9.gaturro.util.errors.PhpErrorLog
 Hace reportes de errores al endpoint `https://mundogaturro.com/logger.php`
+# Assets
+Los assets contienen subclases, las cuáles se encargan del comportamiento de los objetos dentro del juego, desde las prendas, hasta objetos del hogar.
+## ClothMamboAsset
+En el `frame1()` deben ir una variable `clothes` la cuál debe ir asignada con las siguientes opciones:
+
+```json
+{
+    "accesories": "filename.itemid",
+    "hats": "filename.itemid",
+    "foot": "filename.itemid",
+    "arm": "filename.itemid",
+    "cloth": "filename.itemid",
+    "neck": "filename.itemid",
+    "leg": "filename.itemid",
+    "hairs": "filename.itemid",
+    "transport": "filename.transportid" /*must be TransportOnMamboAsset*/
+}
+```
+## ConsumableMamboAsset
+Se pueden especificar acciones bajo la variable/objeto `adds`
+
+```actionscript
+	adds.effect (string)
+	adds.action (string)
+	questItem (bool)
+```
+* Effect:
+```actionscript
+ "type.hexColor"
+```
+	Valores de `type`:
+	-	glow
+	
+* Action:
+```actionscript
+ "animation.swfFile.id"
+```
+	Valores de `animation`:
+	-	percussion
+	-	guitar
+	-	flag
+
 # Observaciones
-- La lista de servidores cuando se retorna, devuelve un valor inferior al real, si el puerto en servers.json es 4098, en el bootstrap se le agrega 1, lo que hace que 4099 sea el valor real **(véase [[MMO.as]][MMO.as])**
-- Token Basic: gaturro:gatoprepro **(véase [[PhpErrorLog.as]][PhpErrorLog.as])**
+- La lista de servidores cuando se retorna, devuelve un valor inferior al real, si el puerto en servers.json es 4098, en el bootstrap se le agrega 1, lo que hace que 4099 sea el valor real **(véase [MMO.as])**
+- Token Basic: gaturro:gatoprepro **(véase [PhpErrorLog.as])**
 - com.qb9.mines.network.MinesServer | bootstrap conexión
 - com.qb9.gaturro : serviceAccessKey:"0PN5J17HBGZHT7JJ3X82" || securityRequestKey:"ABDpIUDlKDABDpIU"
 - com.qb9.gaturro.net.requests.SecureMamboRequest // Aparentemente envia las peticiones de manera "segura" con un hash
