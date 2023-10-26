@@ -42,4 +42,4 @@ Estos se envían al método (`handleEvent(type, mobject, mobject.hasBoolean("suc
 
 ### MMO()
 
-[Message.as]: https://github.com/nikitacontreras/mgsc/blob/main/com/qb9/mines/network/Message.as#L11 "Message.as:L11"
+[Message.as]: com/qb9/mines/network/Message.as#L11 "Message.as:L11"
