@@ -1,8 +1,8 @@
-# Libraries
-In the `MMO.swf` file (the bootstrap of the game) there are several functions which will be added as functionality is found.
-The following libraries can be found by decompiling the `MMO.swf` file, returning a `.fla` file with `.as` (ActionScript 3) code.
+# MGSC
+En el archivo `MMO.swf` (el bootstrap del juego) hay varias funciones que se irán añadiendo a medida que se encuentre funcionalidad.
+Las siguientes librerías se pueden encontrar descompilando el archivo `MMO.swf`, devolviendo un archivo `.fla` con código `.as` (ActionScript 3).
 ## MMO
-The initial class, which loads a large number of libraries from the `com.qb9` package, within that package are other libraries, which could be considered the main ones.
+La clase inicial, que carga un gran número de librerías del paquete `com.qb9`, dentro de ese paquete se encuentran otras librerías, que podrían considerarse las principales.
 
 Su funcionamiento se entiende en:
 1. **MMO()**
@@ -34,6 +34,7 @@ Su funcionamiento se entiende en:
 12. **initiateConnection()**
 	Cambia el estado a `CONNECTING`, define un objeto `connectionSettings` del archivo `servers.json`, a su vez almacena la dirección en `serverAddress` y crea un nuevo objeto con la clase `DefaultNetworkManager()`  (Véase [DefaultNetworkManager.as])
 
+En el [siguiente archivo](CONNECTION.MD) se hace una explicación más extensa sobre el proceso de conexión desde el cliente al servidor por medio de sockets TCP
 ### Gaturro
 Se encarga en gran parte del manejo de los sprites y salas dentro del cliente, tiene algunas utilidades para el manejo de strings/arrays, contando reporte de errores
 #### com.qb9.gaturro.view.screens.ServersScreen
