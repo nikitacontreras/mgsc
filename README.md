@@ -34,7 +34,7 @@ Su funcionamiento se entiende en:
 12. **initiateConnection()**
 	Cambia el estado a `CONNECTING`, define un objeto `connectionSettings` del archivo `servers.json`, a su vez almacena la dirección en `serverAddress` y crea un nuevo objeto con la clase `DefaultNetworkManager()`  (Véase [DefaultNetworkManager.as])
 
-En el [siguiente archivo](CONNECTION.MD) se hace una explicación más extensa sobre el proceso de conexión desde el cliente al servidor por medio de sockets TCP
+En el [siguiente archivo](CONNECTION.md) se hace una explicación más extensa sobre el proceso de conexión desde el cliente al servidor por medio de sockets TCP
 ### Gaturro
 Se encarga en gran parte del manejo de los sprites y salas dentro del cliente, tiene algunas utilidades para el manejo de strings/arrays, contando reporte de errores
 #### com.qb9.gaturro.view.screens.ServersScreen
