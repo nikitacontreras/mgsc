@@ -1,0 +1,28 @@
+{
+	"config": "airmobile",
+	"compilerOptions": {
+		"source-path": [
+			"src"
+		],
+		"output": "bin/HelloAIR.swf"
+	},
+	"mainClass": "HelloAIR",
+	"application": "src/HelloAIR-app.xml",
+	"airOptions": {
+		"android": {
+			"output": "bin/HelloAIR.apk",
+			"signingOptions": {
+				"storetype": "pkcs12",
+				"keystore": "android_certificate.p12"
+			}
+		},
+		"ios": {
+			"output": "bin/HelloAIR.ipa",
+			"signingOptions": {
+				"storetype": "pkcs12",
+				"keystore": "ios_certificate.p12",
+				"provisioning-profile": "example.mobileprovision"
+			}
+		}
+	}
+} 
